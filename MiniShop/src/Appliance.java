@@ -7,7 +7,4 @@ public class Appliance extends Product{
     public String getDescription(){
         return "Electrodomestico " + getName() + " Con un precio de " + getPrice() + "\n";
     }
-
-
-
 }

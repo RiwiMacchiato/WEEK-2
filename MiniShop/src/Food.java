@@ -7,7 +7,6 @@ public class Food extends Product {
     public String getDescription(){
         return "Alimento " + getName() + " Con un precio de " + getPrice() + "\n";
     }
-
 }
 
 
