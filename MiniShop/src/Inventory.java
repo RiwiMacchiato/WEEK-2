@@ -14,7 +14,7 @@ public class Inventory {
     public boolean addProduct(Product product, int quantity){
         String name = product.getName();
 
-        if (stock.containsKey(name)){
+        if (stock.containsKey(name.toLowerCase())){
             return false;
         }
 
@@ -24,7 +24,7 @@ public class Inventory {
         }
 
         products.add(product);
-        stock.put(name,quantity);
+        stock.put(name.toLowerCase(),quantity);
 
         return true;
     }
@@ -34,15 +34,15 @@ public class Inventory {
     }
 
     public int getStock(String name){
-        return stock.getOrDefault(name, 0);
+        return stock.getOrDefault(name.toLowerCase(), 0);
     }
 
     public boolean productExists(String name){
-        return stock.containsKey(name);
+        return stock.containsKey(name.toLowerCase());
     }
 
     public boolean updateStock (String name, int newAmount){
-        if (!stock.containsKey(name)){
+        if (!stock.containsKey(name.toLowerCase())){
             return  false;
         }
 
@@ -51,7 +51,7 @@ public class Inventory {
             return false;
         }
 
-        stock.put(name, newAmount);
+        stock.put(name.toLowerCase(), newAmount);
         return true;
     }
 
